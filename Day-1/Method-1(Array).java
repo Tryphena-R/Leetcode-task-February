@@ -1,8 +1,14 @@
 class Solution {
-    public int singleNumber(int[] nums) {
-        int res=nums[0];
-        for(int i=1;i<nums.length;i++)
-            res=res^nums[i];
-        return res;
+    static final int x=30000;
+    public int singleNumber(int[] nums){
+        int count[]=new int[100001];
+        for(int i:nums)
+            count[i+x]++;
+
+        for(int i=0;i<=100000;i++){
+            if(count[i]==1) 
+                return i-x;
+        }
+        return -1;
     }
 }
