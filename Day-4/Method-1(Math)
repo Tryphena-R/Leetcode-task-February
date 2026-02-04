@@ -1,1 +1,7 @@
+class Solution {
+    public boolean isPerfectSquare(int num) {
+        long x= (long)Math.sqrt(num);
+        return x*x == num;
+    }
+}
 
